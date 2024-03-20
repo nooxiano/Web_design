@@ -1,0 +1,55 @@
+*{
+    font-family: sans-serif;
+    background-color: rgb(35, 35, 35);
+    color: white;
+}
+
+.onda {
+    width: 500px;
+}
+
+img {
+    border: 10px solid white;
+    margin: 50px;
+    width: 350px;
+    height: auto;
+}
+
+.immagini {
+    padding: 15px 0;
+}
+
+.home-button{
+    color: gray;
+}
+
+.home-button:hover{
+    color: rgb(200, 200, 200)
+}
+
+.museo{
+    color:coral;
+}
+
+.museo:hover{
+    color:rgb(255, 160, 125);
+}
+
+.artista{
+    color: forestgreen;
+}
+
+.total{
+    width:auto;
+}
+
+.opere-artista{
+    width: 100px;
+}
+#a2-img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}

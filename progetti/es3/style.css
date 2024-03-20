@@ -1,0 +1,15 @@
+* {font-family: sans-serif;}
+body{
+    background-color: gold;
+}
+img{
+    height: 35px;
+}
+h1{
+    font-size: 32px;
+}
+p{
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: justify;
+}
