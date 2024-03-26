@@ -1,0 +1,29 @@
+#hover-shift{
+    margin: 10px;
+    text-align: center;
+    background-color: magenta;
+    width: 200px;
+    height: 100px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+#hover-shift:hover{
+    transform: translateX(50px);
+}
+#police{
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    animation-name: police;
+    transition-property: background-color;
+    animation: police 0.2s infinite alternate;
+}
+
+@keyframes police{
+    0%{
+        background-color: blue;
+    }
+    100%{
+        background-color: red;
+    }
+}
