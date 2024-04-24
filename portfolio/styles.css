@@ -1,0 +1,27 @@
+*{
+    background-color: rgb(12, 12, 12);
+    color: rgba(255, 255, 255, 87);
+}
+body{
+    margin: 0;
+}
+#nome{
+    font-family: 'Akira Expanded';
+    font-size: 48px;
+}
+#sottotitolo{
+    font-family: 'Lexend Exa';
+    opacity: 60%;
+    font-size: 15px;
+}
+.testi{
+    font-family: 'Open Sans';
+    font-weight: 400;
+}
+#button_text{
+    font-family: 'Akira Expanded';
+    font-size: 16px;
+    border: 3px solid #7454c9;
+    padding: 10px;
+    display: inline-block;
+}
