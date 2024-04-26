@@ -2,17 +2,113 @@
     background-color: rgb(12, 12, 12);
     color: rgba(255, 255, 255, 87);
 }
-body{
-    margin: 0;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100vw;
+  height: 100vh;
+}
+
+:root {
+  --bar-width: 30px;
+  --bar-height: 2px;
+  --hamburger-gap: 8px;
+  --foreground: white;
+  --background: blue/*rgb(12,12,12)*/;
+  --hamburger-margin: 8px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu {
+    padding-left: 10px;
+    padding-top: 10px;
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: var(--hamburger-margin);
+  left: var(--hamburger-margin);
+  z-index: 2;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+  border: 1px solid var(--background);
+  box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  transform-origin: left center;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing);
+}
+
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    font-family: 'Akira Expanded';
+    transition: transform var(--animation-timing);
+    transform: translateY(-100%);
+/*    padding: 0.5rem 1rem;*/
+/*    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);*/
+    background-color: var(--background);
+    color: var(--foreground);
+/*  min-height: 100vh;
+    min-width: 100vw; */
+
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+  transform: translateY(0);
+}
+
 #nome{
     font-family: 'Akira Expanded';
     font-size: 48px;
-}
-#sottotitolo{
-    font-family: 'Lexend Exa';
-    opacity: 60%;
-    font-size: 15px;
+    margin: 0;
 }
 .testi{
     font-family: 'Open Sans';
@@ -24,4 +120,41 @@ body{
     border: 3px solid #7454c9;
     padding: 10px;
     display: inline-block;
+    margin: 0;
+}
+
+.menu-items{
+    padding: 10px;
+    font-size: 27px;
+    text-align: center;
+    align-items: center;
+    display: block;
+    border: 3px solid #7454c9;
+}
+#sottotitolo{
+/*    display: inline-block;*/
+    font-family: 'Lexend Exa';
+    color: #a1a1a1;
+    font-size: 15px;
+    margin: 0;
+}
+#home{
+    gap: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    height: 100vh;
+}
+.menu{
+    gap: 10%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+a{
+    text-decoration: none;
 }
