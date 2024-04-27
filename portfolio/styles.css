@@ -1,7 +1,7 @@
-*{
-    background-color: rgb(12, 12, 12);
-    color: rgba(255, 255, 255, 87);
+* {
+  color: rgba(255, 255, 255, 87);
 }
+
 *,
 *::after,
 *::before {
@@ -9,8 +9,9 @@
 }
 
 body {
+  background-color: rgb(12, 12, 12);
   margin: 0;
-  background-color: rgba(0, 0, 0, 0);
+/*  background-color: rgba(0, 0, 0, 0); */
   width: 100vw;
   height: 100vh;
 }
@@ -20,15 +21,17 @@ body {
   --bar-height: 2px;
   --hamburger-gap: 8px;
   --foreground: white;
-  --background: blue/*rgb(12,12,12)*/;
+  --background: rgb(12,12,12)
+    /*rgb(12,12,12)*/
+  ;
   --hamburger-margin: 8px;
   --animation-timing: 200ms ease-in-out;
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
 .hamburger-menu {
-    padding-left: 10px;
-    padding-top: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
   display: flex;
   flex-direction: column;
@@ -85,76 +88,165 @@ body {
 }
 
 .sidebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    font-family: 'Akira Expanded';
-    transition: transform var(--animation-timing);
-    transform: translateY(-100%);
-/*    padding: 0.5rem 1rem;*/
-/*    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);*/
-    background-color: var(--background);
-    color: var(--foreground);
-/*  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  font-family: 'Akira Expanded';
+  transition: transform var(--animation-timing);
+  transform: translateY(-100%);
+  /*    padding: 0.5rem 1rem;*/
+  /*    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);*/
+  background-color: var(--background);
+  color: var(--foreground);
+  /*  min-height: 100vh;
     min-width: 100vw; */
 
 }
 
-.hamburger-menu:has(input:checked) + .sidebar {
+.hamburger-menu:has(input:checked)+.sidebar {
   transform: translateY(0);
 }
 
-#nome{
-    font-family: 'Akira Expanded';
-    font-size: 48px;
-    margin: 0;
-}
-.testi{
-    font-family: 'Open Sans';
-    font-weight: 400;
-}
-#button_text{
-    font-family: 'Akira Expanded';
-    font-size: 16px;
-    border: 3px solid #7454c9;
-    padding: 10px;
-    display: inline-block;
-    margin: 0;
+@font-face {
+  font-family: "Akira Expanded";
+  src: url("./fonts/Akira_Expanded.otf") format('otf');
+  src: url("./fonts/Akira_Expanded.woff2") format('woff2');
 }
 
-.menu-items{
-    padding: 10px;
-    font-size: 27px;
-    text-align: center;
-    align-items: center;
-    display: block;
-    border: 3px solid #7454c9;
+#nome {
+  font-family: 'Akira Expanded', sans-serif;
+  font-size: 48px;
+  margin: 0;
 }
-#sottotitolo{
-/*    display: inline-block;*/
-    font-family: 'Lexend Exa';
-    color: #a1a1a1;
-    font-size: 15px;
-    margin: 0;
+
+.testi {
+  font-family: 'Open Sans';
+  font-weight: 400;
 }
-#home{
-    gap: 10px;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    height: 100vh;
+
+#button_text {
+  font-family: 'Akira Expanded',sans-serif;
+  font-size: 16px;
+  border: 3px solid #7454c9;
+  padding: 10px;
+  display: inline-block;
+  margin: 0;
 }
-.menu{
-    gap: 10%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+
+.menu-items {
+  padding: 10px;
+  font-size: 27px;
+  text-align: center;
+  align-items: center;
+  display: block;
+  border: 3px solid #7454c9;
 }
-a{
-    text-decoration: none;
+
+#sottotitolo {
+  /*    display: inline-block;*/
+  font-family: 'Lexend Exa';
+  color: #a1a1a1;
+  font-size: 15px;
+  margin: 0;
+}
+
+#home {
+  gap: 10px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  height: 100vh;
+}
+
+.menu {
+  gap: 10%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+}
+.footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+/*  align-items: center; */
+  background-color: #262626;
+  height: 200px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 35px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer_name{
+  font-family: 'Akira Expanded';
+
+  font-size: 20px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+.footer_text{
+  font-family: 'Open Sans';
+  font-size: 16px;
+  vertical-align: middle;
+  margin: 0;
+  padding-left: 12px;
+}
+/*
+.instagram{
+  display: flex;
+  padding-bottom: 6px;
+  flex-direction: row;
+}
+.behance{
+  display: flex;
+  padding-top: 6px;
+  flex-direction: row;
+}
+*/
+.socials{
+  display: flex;
+  flex-direction: column;
+
+}
+.socials div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.copyright{
+  font-family: 'Open Sans';
+  font-size: 10px;
+  color: rgb(126,126,126);
+  margin-top: 20px;
+
+}
+.footer_pages p{
+  margin-bottom: 12px;
+}
+.colonna2 .footer_text{
+  padding: 0;
+}
+.page{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.page_title{
+  font-family: 'Akira Expanded';
+  font-size: 26px;
+}
+.page img{
+  border-radius: 10px;
+  width: 90vw;
+  height: 200px;
+  object-fit: cover;
 }
