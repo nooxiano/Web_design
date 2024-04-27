@@ -21,7 +21,21 @@
     <title>Andrea Marino</title>
 </head>
 <body>
-    <label class="hamburger-menu">
+    <header class="header_home">
+        <label class="hamburger-menu">
+            <input type="checkbox">
+        </label>
+        <aside class="sidebar">
+            <nav>
+                <div class="menu">
+                    <a href="about.html"><div class="menu-items">Who am I?</div></a>
+                    <a href="works.html"><div class="menu-items">My works</div></a>
+                    <a href="contacts.html"><div class="menu-items">Get in touch</div></a>
+                </div>
+            </nav>
+        </aside>
+    </header>
+   <!---- <label class="hamburger-menu"> 
         <input type="checkbox">
     </label>
     <aside class="sidebar">
@@ -31,25 +45,25 @@
                 <a href="works.html"><div class="menu-items">My works</div></a>
                 <a href="contacts.html"><div class="menu-items">Get in touch</div></a>
             </div>
-        </nav>
-    </aside>
+        </nav> 
+    </aside> -->
     <div id="home">
         <h1 id="nome">Andrea<br>Marino</h1>
         <h2 id="sottotitolo">Virtual Photography</h2>
         <a href="works.html"><h3 id="button_text">See my work ></h3></a>
-    </div>
+    </div> 
     <footer>
         <div class="footer">
             <div class="colonna1">
                 <h4 class="footer_name">Andrea<br>Marino</h4>
                 <div class="socials">
-                    <a href="https://www.instagram.com/noox.jpg/">
+                    <a href="https://www.instagram.com/noox.jpg/" target="_blank">
                         <div>
                             <img src="./img/instagram.svg">
                             <p class="footer_text">Instagram</p>
                         </div>
                     </a>
-                    <a href="https://www.behance.net/andreamarino13">
+                    <a href="https://www.behance.net/andreamarino13" target="_blank">
                         <div>
                             <img src="./img/behance.svg">
                             <p class="footer_text">Behance</p>
@@ -59,9 +73,9 @@
             </div>
             <div class="colonna2">
                 <div class="footer_pages">
-                    <p class="footer_text">About me</p>
-                    <p class="footer_text">Works</p>
-                    <p class="footer_text">Contacts</p>
+                    <a href="about.html"><p class="footer_text">About me</p></a>
+                    <a href="works.html"><p class="footer_text">Works</p></a>
+                    <a href="contacts.html"><p class="footer_text">Contacts</p></a>
                 </div>
                 <p class="copyright">© 2024 Andrea Marino</p>
             </div>
