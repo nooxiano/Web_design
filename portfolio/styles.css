@@ -1,53 +1,43 @@
 * {
   color: rgba(255, 255, 255, 87);
 }
-
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
-
 body {
-  background-color: rgb(12, 12, 12);
+  background-color: #121212;
   margin: 0;
-/*  background-color: rgba(0, 0, 0, 0); */
   width: 100vw;
   height: 100vh;
 }
-
 :root {
   --bar-width: 30px;
   --bar-height: 2px;
   --hamburger-gap: 8px;
   --foreground: white;
-  --background: rgb(12,12,12)
-    /*rgb(12,12,12)*/
-  ;
+  --background: rgb(12,12,12);
   --hamburger-margin: 8px;
   --animation-timing: 200ms ease-in-out;
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
-
 .hamburger-menu {
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
   display: flex;
   flex-direction: column;
   gap: var(--hamburger-gap);
   width: max-content;
-/*  position: absolute;*/
   top: var(--hamburger-margin);
   left: var(--hamburger-margin);
   z-index: 4;
 }
-
 .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
 .hamburger-menu input:focus-visible {
   border: 1px solid var(--background);
   box-shadow: 0 0 0 1px var(--foreground);
 }
-
 .hamburger-menu::before,
 .hamburger-menu::after,
 .hamburger-menu input {
@@ -59,7 +49,6 @@ body {
   transition: opacity var(--animation-timing), width var(--animation-timing),
     rotate var(--animation-timing), translate var(--animation-timing);
 }
-
 .hamburger-menu input {
   appearance: none;
   padding: 0;
@@ -67,24 +56,20 @@ body {
   outline: none;
   pointer-events: none;
 }
-
 .hamburger-menu:has(input:checked)::before {
   rotate: 45deg;
   width: var(--x-width);
   translate: 0 calc(var(--bar-height) / -2);
 }
-
 .hamburger-menu:has(input:checked)::after {
   rotate: -45deg;
   width: var(--x-width);
   translate: 0 calc(var(--bar-height) / 2);
 }
-
 .hamburger-menu input:checked {
   opacity: 0;
   width: 0;
 }
-
 .sidebar {
   position: absolute;
   top: 0;
@@ -93,37 +78,27 @@ body {
   font-family: 'Akira Expanded';
   transition: transform var(--animation-timing);
   transform: translateY(-100%);
-  /*    padding: 0.5rem 1rem;*/
-  /*    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);*/
   background-color: var(--background);
   color: var(--foreground);
-  /*  min-height: 100vh;
-    min-width: 100vw; */
-    z-index: 3;
-
+  z-index: 3;
 }
-
 .hamburger-menu:has(input:checked)+.sidebar {
   transform: translateY(0);
 }
-
 @font-face {
   font-family: "Akira Expanded";
   src: url("./fonts/Akira_Expanded.otf") format('otf');
   src: url("./fonts/Akira_Expanded.woff2") format('woff2');
 }
-
 #nome {
   font-family: 'Akira Expanded', sans-serif;
   font-size: 48px;
   margin: 0;
 }
-
 .testi {
   font-family: 'Open Sans';
   font-weight: 400;
 }
-
 #button_text {
   font-family: 'Akira Expanded',sans-serif;
   font-size: 16px;
@@ -132,7 +107,6 @@ body {
   display: inline-block;
   margin: 0;
 }
-
 .menu-items {
   padding: 10px;
   font-size: 27px;
@@ -141,15 +115,12 @@ body {
   display: block;
   border: 3px solid #7454c9;
 }
-
 #sottotitolo {
-  /*    display: inline-block;*/
   font-family: 'Lexend Exa';
   color: #a1a1a1;
   font-size: 15px;
   margin: 0;
 }
-
 #home {
   gap: 10px;
   justify-content: center;
@@ -158,7 +129,6 @@ body {
   padding-left: 20px;
   height: 100vh;
 }
-
 .menu {
   gap: 10%;
   align-items: center;
@@ -168,14 +138,12 @@ body {
   height: 100vh;
   width: 100vw;
 }
-
 a {
   text-decoration: none;
 }
 .footer{
   display: grid;
   grid-template-columns: 1fr 1fr;
-/*  align-items: center; */
   background-color: #262626;
   height: 200px;
   padding-left: 10%;
@@ -198,22 +166,9 @@ a {
   margin: 0;
   padding-left: 12px;
 }
-/*
-.instagram{
-  display: flex;
-  padding-bottom: 6px;
-  flex-direction: row;
-}
-.behance{
-  display: flex;
-  padding-top: 6px;
-  flex-direction: row;
-}
-*/
 .socials{
   display: flex;
   flex-direction: column;
-
 }
 .socials div{
   display: flex;
@@ -221,13 +176,11 @@ a {
   align-items: center;
   margin-bottom: 12px;
 }
-
 .copyright{
   font-family: 'Open Sans';
   font-size: 10px;
   color: rgb(126,126,126);
   margin-top: 20px;
-
 }
 .footer_pages p{
   margin-bottom: 12px;
@@ -238,6 +191,9 @@ a {
 .page{
   padding-left: 5%;
   padding-right: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
 }
 .page_title{
   font-family: 'Akira Expanded';
@@ -275,5 +231,80 @@ header{
       left: 50%;
       margin-left: -60px;
       display: inline;
+  }
+}
+.card{
+  width: 100%;
+  height: 245px;
+  background-color: #0C0B15;
+  border-radius: 10px;
+  position: relative;
+  object-fit: cover;
+}
+.card img{
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 172px;
+}
+.card_title{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin: auto;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card_subtitle{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #809fb8;
+  margin: auto;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card_text{
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+.lavori{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.lavori > * {
+  margin-bottom: 50px;
+}
+@media screen and (min-width:768px) {
+  .card{
+    width: 280px;
+    height: 245px;
+  }
+  .lavori{
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .lavori > * {
+    flex-basis: calc(50% - 50px);
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width:992px){
+  .lavori{
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .lavori > * {
+    flex-basis: calc(33,33% - 50px);
+    margin-right: 50px;
+    margin-bottom: 50px;
   }
 }
