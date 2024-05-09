@@ -136,7 +136,7 @@
   #sottotitolo {
     font-family: 'Lexend Exa';
     color: #a1a1a1;
-    font-size: 15px;
+    font-size: 3.5vw;
     margin: 0;
   }
 
@@ -145,8 +145,8 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
-    height: 95vh;
+    padding-left: 10vw;
+    height: 90vh;
   }
 
   .menu {
@@ -414,8 +414,44 @@
       display: none;
     }
   }
+.glow{
+  width: 100vw;
+  height: 100vh;
+}
+#animated-glow{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  filter: blur(100px);
+  animation-name: animated-glow;
+  animation: animated-glow 7s infinite alternate;
+  z-index: -1;
+}
 
-  @media screen and (min-width:768px) {
+@keyframes animated-glow {
+  0%{
+    scale: 100%;
+  }
+  100%{
+    scale: 230%;
+    left: 25%;
+  }
+  }
+#bg-glow{
+  position: fixed;
+  filter: blur(150px);
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.about{
+  display: flex;
+  flex-direction: column;
+}
+
+  @media screen and (min-width:769px) {
     .card {
       width: 280px;
       height: 245px;
@@ -444,5 +480,26 @@
 
     .images {
       display: none;
+    }
+    #nome{
+      font-size: 90px;
+    }
+    #button_text{
+      font-size: 30px;
+    }
+    #sottotitolo{
+      font-size: 26px;
+    }
+    .about{
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .about *{
+      margin: 0;
+    }
+    .about img{
+      width: 35vw;
+      height: 75%;
     }
   }
